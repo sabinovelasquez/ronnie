@@ -1,0 +1,38 @@
+.sidebar
+	%ul
+		%li
+			%a{:'href' => '#about', :'du-smooth-scroll' => 'du-smooth-scroll', :'duration' => '800', :'du-scrollspy' => 'du-scrollspy', :'offset' => '200' }
+				%span{ :'ng-show' => 'lang==1' }
+					Acerca
+				%span{ :'ng-show' => 'lang==2' }
+					About
+		%li
+			%a{:'href' => '#experience', :'du-smooth-scroll' => 'du-smooth-scroll', :'duration' => '800', :'du-scrollspy' => 'du-scrollspy' }
+				%span{ :'ng-show' => 'lang==1' }
+					Experiencia
+				%span{ :'ng-show' => 'lang==2' }
+					Experience
+		%li
+			%a{:'href' => '#portfolio', :'du-smooth-scroll' => 'du-smooth-scroll', :'duration' => '800', :'du-scrollspy' => 'du-scrollspy' }
+				%span{ :'ng-show' => 'lang==1' }
+					Portafolio
+				%span{ :'ng-show' => 'lang==2' }
+					Portfolio
+		%li
+			%a{:'href' => '#formation', :'du-smooth-scroll' => 'du-smooth-scroll', :'duration' => '800', :'du-scrollspy' => 'du-scrollspy' }
+				%span{ :'ng-show' => 'lang==1' }
+					Formación
+				%span{ :'ng-show' => 'lang==2' }
+					Formation
+		%li
+			%a{:'href' => '#contact', :'du-smooth-scroll' => 'du-smooth-scroll', :'duration' => '800', :'du-scrollspy' => 'du-scrollspy' }
+				%span{ :'ng-show' => 'lang==1' }
+					Contacto
+				%span{ :'ng-show' => 'lang==2' }
+					Contact
+	.lang
+		%a{ :'ng-click' => 'lang = 1' }
+			Es
+		= precede '/ ' do
+			%a{ :'ng-click' => 'lang = 2' }
+				En

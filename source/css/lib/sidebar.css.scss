@@ -1,0 +1,56 @@
+@import 'colors';
+
+.sidebar{
+	position:fixed;
+	z-index: 2;
+	top:80px;
+	right:4%;
+	ul{
+		text-transform: uppercase;
+		font-family: 'pier_sansbold';
+		li{
+			list-style: none;
+			text-align: right;
+			a{
+				@include transition(color .3s ease);
+				text-decoration: none;
+				cursor: pointer;
+				color: $grey;
+				position: relative;
+				font-size: 2em;
+				&::before{
+					@include transition(width .5s ease);
+				    content: '';
+					height: 4px;
+					width: 0;
+					background-color: black;
+					display: block;
+					position: absolute;
+					right: 0;
+					top: 17px;
+				}
+				&:hover, &.active{
+					color: black;
+					&::before{
+							width: 100%;
+							position: absolute;
+							top: 17px;
+					}
+				}
+			}
+		}
+	}
+	.lang{
+		text-align:right;
+		font-size: 1.5em;
+		color: $grey;
+		a{
+			cursor: pointer;
+			color: $grey;
+			text-decoration: none;
+			&:hover{
+				color: black;
+			}
+		}
+	}
+}

@@ -1,7 +1,99 @@
 @import 'functions';
+@import 'sidebar';
+@import 'colors';
+
+body{
+	font-family: 'Cantata One', serif;
+}
 
 header{
+	position: relative;
 	min-height: 430px;
 	background: url('../img/header.jpg');
 	background-size:cover;
+	.about{
+		position: relative;
+		top:250px;
+		
+	}
+	h1{
+		// margin: 0 4%;
+		margin: 0 4%;
+		font-size: 4em;
+		color:black;
+		text-transform: uppercase;
+		font-family: 'pier_sansbold';
+		&::selection {
+			background: white;
+		}
+		&::-moz-selection {
+			background: white;
+		}
+	}
+	p{
+		color: black;
+		font-weight: bold;
+		margin: 10px 4%;
+		width: 60%;
+		&::selection {
+			background: white;
+		}
+		&::-moz-selection {
+			background: white;
+		}
+	}
+}
+.experience{
+	width:100%;
+	float:left;
+	margin-top: 350px;
+	h2{
+		margin: 30px 4%;
+		font-size: 2.5em;
+	}
+	h3{
+		margin: 30px 4%;
+		font-size: 2em;
+	}
+	h4{
+		margin: 0;
+		font-size: 2em;
+	}
+	h2, h3, h4{
+		color:black;
+		text-transform: uppercase;
+		font-family: 'pier_sansbold';
+	}
+	hr{
+		background: black;
+		float: left;
+		&.center{
+			height:2px;
+			width: 4%;
+			margin-left:48%;
+			margin-bottom:40px;
+		}
+		&.left{
+			height:8px;
+			width: 8%;
+			margin-right:92%;
+		}
+	}
+	.title{
+		font-size: 1.9em;
+	}
+	span{
+		font-size: 1.1em;
+	}
+	p{
+		margin-top: 80px;
+		margin-bottom: 80px;
+		font-style: italic;
+		span{
+			float: left;
+			width: 100%;
+			font-size: 1.3em;
+			font-style: normal;
+		}
+	}
 }
