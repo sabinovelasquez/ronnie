@@ -1,9 +1,7 @@
 @import 'functions';
 
 header{
-	background: #444;
-	min-height: 420px;
-	.main-title{
-		
-	}
+	min-height: 430px;
+	background: url('../img/header.jpg');
+	background-size:cover;
 }
