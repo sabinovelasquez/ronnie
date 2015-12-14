@@ -1,0 +1,14 @@
+%section.tweets
+	.container{ :'ng-controller' => 'twitterCtrl' }
+		%hr
+		%p.text-center{ :'ng-hide' => 'feed' }
+			Loading tweets...
+		#tweets
+			.item{ :'ng-repeat' => 'tweet in feed.tweets | filter: tweet.author.nickName==\'@ronacev\' | limitTo: 1 ' }
+				%h3.text-center
+					{{tweet.text}}
+					.date.text-center
+						{{tweet.updated}}
+
+
+	

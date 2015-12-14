@@ -5,7 +5,7 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'img'
 set :partials_dir, 'partial'
-set :haml, { :ugly => false, :format => :html5 }
+set :haml, { :ugly => true, :format => :html5 }
 activate :minify_html
 activate :livereload
 activate :asset_hash
@@ -16,25 +16,18 @@ configure :development do
 end
 
 configure :build do
-  # activate :minify_javascript
-  # activate :minify_css
+  activate :minify_javascript
+  activate :minify_css
   activate :relative_assets
 end
 
 case ENV['TARGET'].to_s.downcase
   when 'production'
     activate :deploy do |deploy|
-    # remove these comments for rsync
-    # deploy.method = :rsync 
-    # deploy.build_before = true
-    # deploy.host = 'IP'
-    # deploy.path = '/var/www/site.com'
-    deploy.port     = 22
-    deploy.method   = :sftp
-    deploy.host     = 'IP'
-    deploy.path     = '/public_html/'
-    deploy.user     = 'user'
-    deploy.password = 'optional'
+    deploy.method = :rsync
+    deploy.build_before = true
+    deploy.host = '45.55.240.255'
+    deploy.path = '/var/www/sabino.cl/public_html/clients/ronnie'  
     end
   else
     activate :deploy do |deploy|

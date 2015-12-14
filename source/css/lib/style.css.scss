@@ -5,7 +5,11 @@
 body{
 	font-family: 'Cantata One', serif;
 }
-
+section{
+	float: left;
+	width: 100%;
+	margin: 40px 0;
+}
 header{
 	position: relative;
 	min-height: 430px;
@@ -74,7 +78,7 @@ header{
 			margin-bottom:40px;
 		}
 		&.left{
-			height:8px;
+			height:5px;
 			width: 8%;
 			margin-right:92%;
 		}
@@ -95,5 +99,21 @@ header{
 			font-size: 1.3em;
 			font-style: normal;
 		}
+	}
+}
+.tweets{
+	margin: 50px 0;
+	background: black;
+	color: white;
+	hr{
+		height: 3px;
+		background: white;
+		width:30%;
+		margin: 50px 35% 40px 35%;
+		float: left;
+	}
+	.date{
+		margin: 10px 0 50px;
+		font-size: .7em;
 	}
 }
