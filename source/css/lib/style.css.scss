@@ -5,7 +5,7 @@
 body{
 	font-family: 'Cantata One', serif;
 }
-section{
+section, footer{
 	float: left;
 	width: 100%;
 	margin: 40px 0;
@@ -101,6 +101,72 @@ header{
 		}
 	}
 }
+.portfolio, .formation, .contact{
+	h2{
+		margin: 30px 4%;
+		font-size: 2.5em;
+	}
+	h3{
+		margin: 30px 4%;
+		font-size: 2em;
+	}
+	h4{
+		margin: 0;
+		font-size: 2em;
+	}
+	h5{
+		margin: 0;
+		font-size: 2em;
+	}
+	.it{
+		font-style: italic;
+	}
+	h2, h3, h4{
+		color:black;
+		text-transform: uppercase;
+		font-family: 'pier_sansbold';
+	}
+	.narrow{
+		margin: 0 8%;
+		font-size: .9em;
+	}
+	hr{
+		background: black;
+		float: left;
+		&.center{
+			height:2px;
+			width: 4%;
+			margin-left:48%;
+			margin-bottom:40px;
+		}
+		&.left{
+			height:5px;
+			width: 8%;
+			margin-right:92%;
+		}
+	}
+	.title{
+		font-size: 1.9em;
+	}
+	span{
+		font-size: 1.1em;
+	}
+	p{
+		margin-top: 80px;
+		margin-bottom: 80px;
+		font-style: italic;
+		span{
+			float: left;
+			width: 100%;
+			font-size: 1.3em;
+			font-style: normal;
+		}
+	}
+	.email{
+		font-size: 2em;
+		margin: 80px 0;
+	}
+}
 .tweets{
 	margin: 50px 0;
 	background: black;
@@ -115,5 +181,48 @@ header{
 	.date{
 		margin: 10px 0 50px;
 		font-size: .7em;
+	}
+}
+.instagram{
+	h3{
+		margin: 30px 4%;
+		font-size: 2em;
+	}
+	margin: 50px 0;
+	padding: 50px 0;
+	background: black;
+	color: white;
+	.insta{
+		margin: 0 3%;
+		.photo{
+			margin:0;
+			padding: 10px;
+		}
+	}
+	.sig{
+		font-style: italic;
+		margin: 50px 0;
+		font-size: 1.5em;
+	}
+}
+
+footer{
+	margin: 100px 0;
+	.narrow{
+		margin: 0 20% 100px;
+	}
+	a{
+		&:hover{
+			text-decoration: none;
+		}
+		h5{
+			color:black;
+			text-transform: uppercase;
+			font-family: 'pier_sansbold';
+			font-size: 1.2em;
+		}
+	}
+	small{
+		margin:40px 0;
 	}
 }
