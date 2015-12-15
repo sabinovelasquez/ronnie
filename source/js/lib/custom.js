@@ -18,4 +18,13 @@ var app = angular
 				$scope.feed = data;
 			});
 		}
+	])
+	.controller('instagramCtrl', [ '$scope', 'photos',
+		function($scope, photos) {
+			// tweets.get({
+			// 	widgetId: '676261576450641920'
+			// }).success(function(data) {
+			// 	$scope.feed = data;
+			// });
+		}
 	]);
