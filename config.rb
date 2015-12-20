@@ -5,8 +5,8 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'img'
 set :partials_dir, 'partial'
-set :haml, { :ugly => true, :format => :html5 }
-activate :minify_html
+set :haml, { :ugly => false, :format => :html5 }
+# activate :minify_html
 activate :livereload
 activate :asset_hash
 activate :cache_buster
@@ -16,8 +16,8 @@ configure :development do
 end
 
 configure :build do
-  activate :minify_javascript
-  activate :minify_css
+  # activate :minify_javascript
+  # activate :minify_css
   activate :relative_assets
 end
 

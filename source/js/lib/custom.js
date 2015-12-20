@@ -1,14 +1,27 @@
 'use strict';
+
 var app = angular
 
 	.module('app', ['ngAnimate','ui.bootstrap', 'angular-parallax', 'duScroll', 'ngTweets'])
-
-	.controller('gralCtrl', [ '$scope', 
-		function($scope) {
-
-			$scope.lang = 1;
-
+	.filter('linky', function ($sce) {
+		return function (str) {
+			return $sce.trustAsHtml(str.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/(http[^\s]+)/g, '<a href="$1" target="_blank">$1</a>'));
 		}
+	})
+	.controller('gralCtrl', [ '$scope', '$document', 
+		function($scope, $document) {
+			$scope.head = false;
+			$scope.lang = 1;
+			$document.on('scroll', function() {
+				if( $document.scrollTop() > 400 ){
+					$scope.head = true;
+				}else{
+					$scope.head = false;
+				}
+				$scope.$apply();
+			});
+		}
+		
 	])
 	.controller('twitterCtrl', [ '$scope', 'tweets',
 		function($scope, tweets) {
@@ -21,11 +34,11 @@ var app = angular
 	])
 	.controller('instagramCtrl', [ '$scope', '$http',
 		function($scope, $http) {
-			var max = 8;
-			var instagram_json = 'https://api.instagram.com/v1/users/41166289/media/recent/?client_id=8a5f05fceb2c42299239597c6ded2f8e&count='+max;
-			$http.get( instagram_json )
+			var instagram_json = 'https://api.instagram.com/v1/users/41166289/media/recent/?client_id=8a5f05fceb2c42299239597c6ded2f8e&count=8&callback=JSON_CALLBACK'
+			$http.jsonp( instagram_json )
 				.success(function(response) {
 					$scope.photos = response.data;
 				});
 			}
 	]);
+
