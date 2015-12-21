@@ -6,7 +6,8 @@
 			%p.text-center{ :'ng-hide' => 'photos' }
 				Loading instagram...
 		.col-sm-6.col-md-3.photo{ :'ng-repeat' => 'photo in photos' }
-			%img.img-responsive{ :'ng-src' => '{{photo.images.standard_resolution.url}}' }
+			%a{ :'href' => '{{photo.link}}', :'target' => '_blank' }
+				%img.img-responsive{ :'ng-src' => '{{photo.images.standard_resolution.url}}' }
 		.sig
 			= precede '@' do
 				ronavec

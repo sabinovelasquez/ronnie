@@ -4,7 +4,7 @@
 .sidebar{
 	position:fixed;
 	z-index: 2;
-	top:80px;
+	top:40px;
 	right:4%;
 	ul{
 		text-transform: uppercase;
@@ -41,7 +41,16 @@
 			}
 		}
 	}
+	hr{
+		border:none;
+		width: 10px;
+		height: 3px;
+		margin-right: 5px;
+		background: black;
+		float: right;
+	}
 	.lang{
+		margin-top: 50px;
 		text-align:right;
 		font-size: 1.5em;
 		color: $grey;
