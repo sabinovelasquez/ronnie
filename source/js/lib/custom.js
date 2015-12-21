@@ -24,7 +24,7 @@ var app = angular
 			$scope.head = false;
 			$scope.lang = 1;
 			$document.on('scroll', function() {
-				if( $document.scrollTop() > 400 ){
+				if( $document.scrollTop() > 330 ){
 					$scope.head = true;
 				}else{
 					$scope.head = false;

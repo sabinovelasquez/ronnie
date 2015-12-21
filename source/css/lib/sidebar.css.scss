@@ -3,7 +3,7 @@
 
 .sidebar{
 	position:fixed;
-	z-index: 2;
+	z-index: 4;
 	top:40px;
 	right:4%;
 	ul{
@@ -46,7 +46,7 @@
 		width: 10px;
 		height: 3px;
 		margin-right: 5px;
-		background: black;
+		background: $grey;
 		float: right;
 	}
 	.lang{
