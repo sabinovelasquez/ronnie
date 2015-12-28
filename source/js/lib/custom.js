@@ -1,22 +1,17 @@
 'use strict';
 
-function processTweetLinks(text) {
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
-    text = text.replace(exp, "<a href='$1' target='_blank'>$1</a>");
-    exp = /(^|\s)#(\w+)/g;
-    text = text.replace(exp, "$1<a href='https://twitter.com/search?q=%23$2' target='_blank'>#$2</a>");
-    exp = /(^|\s)@(\w+)/g;
-    text = text.replace(exp, "$1<a href='https://www.twitter.com/$2' target='_blank'>@$2</a>");
-    return text;
-}
-
 var app = angular
 
 	.module('app', ['ngAnimate','ui.bootstrap', 'angular-parallax', 'duScroll', 'ngTweets'])
 	.filter('linky', function ($sce) {
 		return function (str) {
-			var tweet = processTweetLinks(str);
-			return $sce.trustAsHtml(tweet);
+			var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
+			str = str.replace(exp, "<a href='$1' target='_blank'>$1</a>");
+			exp = /(^|\s)#(\w+)/g;
+			str = str.replace(exp, "$1<a href='https://twitter.com/search?q=%23$2' target='_blank'>#$2</a>");
+			exp = /(^|\s)@(\w+)/g;
+			str = str.replace(exp, "$1<a href='https://www.twitter.com/$2' target='_blank'>@$2</a>");
+			return $sce.trustAsHtml(str);
 		}
 	})
 	.controller('gralCtrl', [ '$scope', '$document', 
@@ -36,11 +31,14 @@ var app = angular
 	])
 	.controller('twitterCtrl', [ '$scope', 'tweets',
 		function($scope, tweets) {
-			tweets.get({
-				widgetId: '676261576450641920'
-			}).success(function(data) {
-				$scope.feed = data;
-			});
+			$scope.getTweets = function() {
+				tweets.get({
+					widgetId: '676261576450641920'
+				}).success(function(data) {
+					$scope.feed = data;
+				});
+			}
+			$scope.getTweets();
 		}
 	])
 	.controller('instagramCtrl', [ '$scope', '$http',
@@ -50,6 +48,9 @@ var app = angular
 				.success(function(response) {
 					$scope.photos = response.data;
 				});
+			$scope.fullscreen = function() {
+				console.log('full');
 			}
+		}
 	]);
 

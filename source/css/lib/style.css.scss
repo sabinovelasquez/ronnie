@@ -1,6 +1,7 @@
 @import 'functions';
 @import 'sidebar';
 @import 'colors';
+@import "modal";
 
 body{
 	font-family: 'Cantata One', serif;
@@ -144,14 +145,17 @@ header{
 		}
 		margin: 0 3%;
 		a{
-			@include transition(opacity .3s ease);
 			float: left;
-			opacity:1;
 			&:hover{
-				opacity:0.6;
+				opacity: 1;
+				img{
+					opacity:0.6;
+				}
 			}
 		}
 		img{
+			@include transition(opacity .3s ease);
+			opacity:1;
 			width: 92%;
 			margin: 4%;
 		}
