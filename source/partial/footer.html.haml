@@ -1,28 +1,56 @@
 %footer.text-center
 	.container
-		.narrow
-			%a.text-center{ :'href' => '#', :'target' => '_blank' }
-				%h5
-					LinkedIn
-			%a.text-center{ :'href' => '#', :'target' => '_blank' }
-				%h5
-					Twitter
-			%a.text-center{ :'href' => '#', :'target' => '_blank' }
-				%h5
-					Facebook
-			%a.text-center{ :'href' => '#', :'target' => '_blank' }
-				%h5
-					Instagram
-			%a.text-center{ :'href' => '#', :'target' => '_blank' }
-				%h5
-					Medium
-			%a.text-center{ :'href' => '#', :'target' => '_blank' }
-				%h5
-					Ello
-			%a.text-center{ :'href' => '#', :'target' => '_blank' }
-				%h5
-					Tumblr
+		.row
+			.col-sig
+				%a.rrss.text-center{ :'href' => '#', :'target' => '_blank' }
+					%h5
+						LinkedIn
+			.col-sig
+				%a.rrss.text-center{ :'href' => '#', :'target' => '_blank' }
+					%h5
+						Twitter
+			.col-sig
+				%a.rrss.text-center{ :'href' => '#', :'target' => '_blank' }
+					%h5
+						Facebook
+			.col-sig
+				%a.rrss.text-center{ :'href' => '#', :'target' => '_blank' }
+					%h5
+						Instagram
+			.col-sig
+				%a.rrss.text-center{ :'href' => '#', :'target' => '_blank' }
+					%h5
+						Medium
+			.col-sig
+				%a.rrss.text-center{ :'href' => '#', :'target' => '_blank' }
+					%h5
+						Ello
+			.col-sig
+				%a.rrss.text-center{ :'href' => '#', :'target' => '_blank' }
+					%h5
+						Tumblr
 
+	%p.text-center
+		%span{ :'ng-show' => 'lang==1' }
+			Descarga mi
+			%a.cv{ :'href' => 'http://eepurl.com/bK73QX',  :'target' => '_blank' }
+				CV
+			= precede '/' do
+				%a.cv{ :'href' => 'http://eepurl.com/bK73QX',  :'target' => '_blank' }
+					Portafolio
+		%span{ :'ng-show' => 'lang==2' }
+			Download
+			%a.cv{ :'href' => 'http://eepurl.com/bK73QX',  :'target' => '_blank' }
+				CV
+			= precede '/' do
+				%a.cv{ :'href' => 'http://eepurl.com/bK73QX',  :'target' => '_blank' }
+					Portfolio
 	%small
-		= precede '- ' do
-			desde Chile -
+		%span{ :'ng-show' => 'lang==1' }
+			Hecho con
+			%i.fa.fa-heart
+			desde Chile
+		%span{ :'ng-show' => 'lang==2' }
+			Made width
+			%i.fa.fa-heart
+			from Chile
