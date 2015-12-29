@@ -1,6 +1,31 @@
 .container
-	.pull-right
-		%a.close{ :'ng-click' => 'full=false' }
-			cerrar
-	%h1
-		Modal
+	.row
+		.col-md-12
+			.pull-right
+				%a.close{ :'ng-click' => 'full=false' }
+					%span{ :'ng-show' => 'lang==1' }
+						cerrar
+					%span{ :'ng-show' => 'lang==2' }
+						close
+	.row
+		.col-md-5
+			%h1
+				%span{ :'ng-show' => 'lang==1' }
+					{{item.titulo}}
+				%span{ :'ng-show' => 'lang==2' }
+					{{item.title}}
+			%p.desc{ :'ng-show' => 'lang==1' }
+				{{item.descripcion}}
+			%p.desc{ :'ng-show' => 'lang==2' }
+				{{item.description}}
+			%p.contact{ :'ng-show' => 'lang==1' }
+				Conversemos,
+				%a{ :'href' => '#' }
+					escríbeme
+			%p.contact{ :'ng-show' => 'lang==2' }
+				Let's talk,
+				%a{ :'href' => '#' }
+					write me
+		.col-md-7
+			.img{ :'ng-repeat' => 'pic in item.img' }
+				%img.img-responsive{ :'ng-src' => 'img/portafolio/{{pic}}' }

@@ -4,7 +4,9 @@
 //=require vendor/angular/angular-parallax
 //=require vendor/angular/angular-scroll.min
 //=require vendor/ui-bootstrap-tpls-0.14.3.min
-//=require vendor/angular/angular-sanitize.min.js
+//=require vendor/angular/angular-sanitize.min
 //=require vendor/ng-tweets
+//=require vendor/firebase
+//=require vendor/angularfire.min
 //= require underscore
 //= require_tree ./lib

@@ -2,7 +2,7 @@
 
 var app = angular
 
-	.module('app', ['ngAnimate','ui.bootstrap', 'angular-parallax', 'duScroll', 'ngTweets'])
+	.module('app', ['ngAnimate','ui.bootstrap', 'angular-parallax', 'duScroll', 'ngTweets', 'firebase'])
 	.filter('linky', function ($sce) {
 		return function (str) {
 			var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
@@ -41,6 +41,10 @@ var app = angular
 			$scope.getTweets();
 		}
 	])
+	.controller("portfolioCtrl", function($scope, $firebaseArray) {
+		var ref = new Firebase("https://ronnieacevedo.firebaseio.com/portfolio");
+		$scope.items = $firebaseArray(ref);
+	})
 	.controller('instagramCtrl', [ '$scope', '$http',
 		function($scope, $http) {
 			var instagram_json = 'https://api.instagram.com/v1/users/41166289/media/recent/?client_id=8a5f05fceb2c42299239597c6ded2f8e&count=8&callback=JSON_CALLBACK'
