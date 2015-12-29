@@ -145,6 +145,7 @@ header{
 		}
 		margin: 0 3%;
 		a{
+			cursor: pointer;
 			float: left;
 			&:hover{
 				opacity: 1;
@@ -228,10 +229,11 @@ header{
 		margin: 80px 0;
 	}
 }
-.tweets{
+.tweets, .instagram{
 	margin: 50px 0;
 	background: black;
 	color: white;
+	font-family: "Times New Roman", Times, serif;
 	a{
 		@include transition(opacity .3s ease);
 		color: white;
@@ -240,29 +242,42 @@ header{
 			opacity: .5;
 		}
 		&.nounder{
-			float: left;
+			
 			text-decoration: none;
 			position:relative;
-			left:50%;
-			margin-left:-90px;
-			width:180px;
 			height:35px;
 			line-height:35px;
 			text-align: center;
-			margin-bottom: 50px;
-			background: $twitter;
 			-webkit-border-radius: 3px;
 			-moz-border-radius: 3px;
 			border-radius: 3px;
+		}
+		&.tw{
+			margin-bottom: 50px;
+			float: left;
+			left:50%;
+			margin-left:-90px;
+			width:180px;
+			background: $twitter;
+		}
+		&.insta{
+			margin-top: 25px;
+			margin-bottom: 25px;
+			float: right;
+			right:0;
+			width:120px;
+			background: $instagram;
 		}
 	}
 	hr{
 		border:none;
 		height: 2px;
-		background: white;
 		width:30%;
 		margin: 50px 35% 40px 35%;
 		float: left;
+	}
+	.tweet{
+		font-style: italic;
 	}
 	.date{
 		margin: 10px 0 50px;
@@ -276,11 +291,11 @@ header{
 }
 .instagram{
 	h3{
-		margin: 30px 4%;
+		margin: 10px 4%;
 		font-size: 2em;
 	}
 	margin: 50px 0;
-	padding: 50px 0;
+	padding: 20px 0;
 	background: black;
 	color: white;
 	.insta{
@@ -320,6 +335,8 @@ footer{
 		margin: 0 20% 100px;
 	}
 	a{
+		float: left;
+		margin:8px;
 		&:hover{
 			text-decoration: none;
 		}
