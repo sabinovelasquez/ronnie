@@ -13,8 +13,8 @@
 			%p.text-center{ :'ng-hide' => 'photos' }
 				Loading portfolio...
 		.col-sm-6.col-md-4.porta{ :'ng-repeat' => 'photo in photos' }
+			.togfull.fullscreen{ :'ng-class' => '{full: full}' }
+				=partial 'partial/modal/modal'
 			%a{ :'ng-click' => 'fullscreen(); full=true' }
-				.togfull.fullscreen{ :'ng-class' => '{full: full}' }
-					=partial 'partial/modal/modal'
 				%img.img-responsive{ :'ng-src' => '{{photo.images.standard_resolution.url}}' }
 			
