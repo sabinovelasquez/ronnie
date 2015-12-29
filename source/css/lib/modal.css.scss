@@ -1,3 +1,4 @@
+@import 'functions';
 .togfull{
 	@include transition(all .3s ease);
 	position: absolute;
