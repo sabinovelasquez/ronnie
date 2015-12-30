@@ -139,6 +139,15 @@ header{
 }
 .portfolio, .formation, .contact{
 	padding-top: 50px;
+	a.more, a.less{
+		cursor: pointer;
+		@include transition(opacity .3s ease);
+		color: black;
+		text-decoration: underline;
+		&:hover{
+			opacity: .5;
+		}
+	}
 	.porta{
 		.narrow{
 			width:80%;

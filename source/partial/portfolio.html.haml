@@ -13,9 +13,21 @@
 		.col-sm-12
 			%p.text-center{ :'ng-hide' => 'items' }
 				Loading portfolio...
-		.col-sm-6.col-md-4.porta{ :'ng-repeat' => 'item in items' }
+		.col-sm-6.col-md-4.porta{ :'ng-repeat' => 'item in items | limitTo: paginationLimit()' }
 			.togfull.fullscreen{ :'ng-class' => '{full: full}' }
 				=partial 'partial/modal/modal'
 			%a{ :'ng-click' => 'fullscreen(); full=true' }
-				%img.img-responsive{ :'ng-src' => 'img/portafolio/cover/{{item.cover}}' }
-			
+				%img.img-responsive{ :'ng-src' => 'img/portfolio/cover/{{item.cover}}' }
+	
+		.col-sm-12.text-center{ :'ng-show' => 'hasLessItemsToShow()' }
+			%a.less{ :'ng-click' => 'showLessItems()' }
+				%span{ :'ng-show' => 'lang==1' }
+					ver menos
+				%span{ :'ng-show' => 'lang==2' }
+					view less
+		.col-sm-12.text-center{ :'ng-show' => 'hasMoreItemsToShow()' }
+			%a.more{ :'ng-click' => 'showMoreItems()' }
+				%span{ :'ng-show' => 'lang==1' }
+					ver más
+				%span{ :'ng-show' => 'lang==2' }
+					view more

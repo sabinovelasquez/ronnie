@@ -43,7 +43,27 @@ var app = angular
 	])
 	.controller("portfolioCtrl", function($scope, $firebaseArray) {
 		var ref = new Firebase("https://ronnieacevedo.firebaseio.com/portfolio");
+		var pagesShown = 1;
+		var pageSize = 6;
+
 		$scope.items = $firebaseArray(ref);
+
+		$scope.paginationLimit = function(data) {
+			return pageSize * pagesShown;
+		};
+		$scope.hasMoreItemsToShow = function() {
+			return pagesShown < ($scope.items.length / pageSize);
+		};
+		$scope.hasLessItemsToShow = function() {
+			return pagesShown > 1;
+		};
+		$scope.showMoreItems = function() {
+			pagesShown = pagesShown + 1;       
+		};	
+		$scope.showLessItems = function() {
+			pagesShown = pagesShown - 1;       
+		};	
+		
 	})
 	.controller('instagramCtrl', [ '$scope', '$http',
 		function($scope, $http) {
@@ -53,7 +73,7 @@ var app = angular
 					$scope.photos = response.data;
 				});
 			$scope.fullscreen = function() {
-				console.log('full');
+				// console.log('full');
 			}
 		}
 	]);
