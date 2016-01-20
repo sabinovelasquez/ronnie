@@ -3,6 +3,13 @@
 var app = angular
 
 	.module('app', ['ngAnimate','ui.bootstrap', 'angular-parallax', 'duScroll', 'ngTweets', 'firebase'])
+	.filter('html', ['$sce',
+	    function ($sce) {
+			return function (str) {
+			return $sce.trustAsHtml(str);
+			}
+		}
+	])
 	.filter('linky', function ($sce) {
 		return function (str) {
 			var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;

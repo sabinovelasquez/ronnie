@@ -7,6 +7,13 @@
 	height: 0;
 	left: 50%;
 	top: 50%;
+	padding: 20px 0;
+	overflow: auto;
+	.addthis_sharing_toolbox {
+		width: 100%;
+	    padding: 20px 0px;
+	    float: left;
+	}
 	&.full{
 		top:0;
 		left:0;
@@ -15,6 +22,64 @@
 	    background: black;
 	    width: 100%;
 	    height: 100%;
+	}
+	a.close-m{
+		font-size: 1em;
+		color:white;
+		margin-right: 30px;
+		span{
+			color:white;
+			font-size: 1em;
+			font-style: italic;
+		}
+		
+	}
+	h1{
+		font-family: 'pier_sansbold';
+		color: white;
+	}
+	p.subt, p.contact{
+		float: left;
+    	width: 100%;
+		font-family: 'Cantata One', serif;
+	    padding: 0;
+	    text-transform: none;
+	    margin: 15px 0;
+	    color: white;
+
+		span{
+			font-size: 1em;
+			font-style: italic;
+			&.subt-big{
+				font-size: 1.5em;
+			}
+		}
+	}
+	.pad-bottom{
+		padding: 0 0 30px 0;
+	}
+	hr{
+		width:100%;
+		border:1px solid white;
+	}
+	p.item{
+		color:white;
+		padding:0;
+		margin:0;
+		span{
+			font-size: 1em;
+			font-style: italic;
+		}
+		&.n-small{
+			small{
+				font-size: 100%;
+			}
+		}
+
+	}
+	a{
+		color:white;
+		text-decoration:underline;
 	}
 }
 

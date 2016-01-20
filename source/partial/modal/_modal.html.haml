@@ -2,7 +2,7 @@
 	.row
 		.col-md-12
 			.pull-right
-				%a.close{ :'ng-click' => 'full=false' }
+				%a.close-m{ :'ng-click' => 'full=false' }
 					%span{ :'ng-show' => 'lang==1' }
 						cerrar
 					%span{ :'ng-show' => 'lang==2' }
@@ -11,21 +11,85 @@
 		.col-md-5
 			%h1
 				%span{ :'ng-show' => 'lang==1' }
-					{{item.titulo}}
+					{{item.title_es}}
 				%span{ :'ng-show' => 'lang==2' }
-					{{item.title}}
-			%p.desc{ :'ng-show' => 'lang==1' }
-				{{item.descripcion}}
-			%p.desc{ :'ng-show' => 'lang==2' }
-				{{item.description}}
+					{{item.title_en}}
+			%hr
+			%p.item{ :'ng-show' => 'lang==1 && item.cliente_es' }
+				Cliente: {{item.cliente_es}}
+			%p.item{ :'ng-show' => 'lang==2 && item.cliente_en' }
+				Client: {{item.cliente_en}}
+			%p.item{ :'ng-show' => 'lang==1 && item.year' }
+				Año: {{item.year}}
+			%p.item{ :'ng-show' => 'lang==2 && item.year' }
+				Year: {{item.year}}
+			%p.item{ :'ng-show' => 'lang==1 && item.rol' }
+				Rol: {{item.rol}}
+			%p.item{ :'ng-show' => 'lang==2 && item.rol' }
+				Role: {{item.rol}}
+			%p.item{ :'ng-show' => 'lang==1 && item.proceso_es' }
+				Proceso: {{item.proceso_es}}
+			%p.item{ :'ng-show' => 'lang==2 && item.proceso_en' }
+				Process: {{item.proceso_en}}
+			%p.item{ :'ng-show' => 'lang==1 && item.audiencia_es' }
+				Audiencia: {{item.audiencia_es}}
+			%p.item{ :'ng-show' => 'lang==2 && item.audiencia_en' }
+				Audience: {{item.audiencia_en}}
+			%p.item{ :'ng-show' => 'lang==1 && item.status' }
+				Status: {{item.status}}
+			%p.item{ :'ng-show' => 'lang==2 && status' }
+				Status: {{item.status}}
+			%p.item.n-small{ :'ng-show' => 'lang==1 && item.equipo_es' }
+				= precede 'Equipo: ' do 
+					%small{ :'ng-bind-html' => 'item.equipo_es | html' }
+
+			%p.item.n-small{ :'ng-show' => 'lang==2 && item.equipo_en' }
+				= precede 'Staff: ' do 
+					%small{ :'ng-bind-html' => 'item.equipo_en | html' }
+
+			%p.subt
+				%span{ :'ng-show' => 'lang==1 && item.desafio_es' }
+					Desafío:<br>{{item.desafio_es}}
+				%span{ :'ng-show' => 'lang==2 && item.desafio_en' }
+					Challenge:<br>{{item.desafio_en}}
+			%p.subt
+				%span{ :'ng-show' => 'lang==1 && item.contrabrief_es'}
+					Contrabrief:<br>
+					%span{:'ng-bind-html' => 'item.contrabrief_es | html' }
+				%span{ :'ng-show' => 'lang==2 && item.contrabrief_en' }
+					Counter Brief:<br>
+					%span{:'ng-bind-html' => 'item.contrabrief_es | html' }
+			%p.subt
+				%span{ :'ng-show' => 'lang==1 && item.skills_es' }
+					Skills:<br>{{item.skills_es}}
+				%span{ :'ng-show' => 'lang==2 && item.skills_en' }
+					Skills:<br>{{item.skills_en}}
+			
+			.addthis_sharing_toolbox
+
 			%p.contact{ :'ng-show' => 'lang==1' }
-				Conversemos,
-				%a{ :'href' => '#' }
-					escríbeme
+				%span.subt-big
+					¿Te gustó el proyecto?
+				%span.pad-bottom
+					Si te parece que sería buena idea que nos conozcamos...
+				%span
+					Hablemos por Skype: ronacev
+				%span
+					ó escríbeme a:
+					%a{ :'href' => 'mailto:contacto@ronnieacevedo.cl' }
+						contacto(at)ronnieacevedo.cl
+
 			%p.contact{ :'ng-show' => 'lang==2' }
-				Let's talk,
-				%a{ :'href' => '#' }
-					write me
+				%span.subt-big
+					Did you like this project?
+				%span.pad-bottom
+					If you think we should meet...
+				%span
+					Let's talk via Skype: ronacev
+				%span
+					or write me at:
+					%a{ :'href' => 'mailto:contacto@ronnieacevedo.cl' }
+						contacto(at)ronnieacevedo.cl
 		.col-md-7
 			.img{ :'ng-repeat' => 'pic in item.img' }
 				%img.img-responsive{ :'ng-src' => 'img/portfolio/{{pic}}' }
