@@ -40,9 +40,11 @@ var app = angular
 		function($scope, tweets) {
 			$scope.getTweets = function() {
 				tweets.get({
-					widgetId: '676261576450641920'
+					widgetId: '689615466705391616'
+					
 				}).success(function(data) {
 					$scope.feed = data;
+					console.log(data);
 				});
 			}
 			$scope.getTweets();
