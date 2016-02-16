@@ -1,20 +1,19 @@
-%section.tweets
+%section.last-tweet.tweets
 	.container{ :'ng-controller' => 'twitterCtrl' }
-		.row
-			.col-sm-12
-				%h2.text-center
-					%span{ :'ng-show' => 'lang==1' }
-						Escenciales
-					%span{ :'ng-show' => 'lang==2' }
-						Essentials
-				%hr.center
-		%p.text-center{ :'ng-hide' => 'feed' }
-			Loading tweets...
 		#tweets.narrow
-			.item{ :'ng-repeat' => 'tweet in feed.tweets | limitTo: 3 ' }
-				.col-sm-4
+			.item{ :'ng-repeat' => 'tweet in feed.tweets | limitTo: 1 ' }
+				.col-sm-12
 					%h3.text-center
 						.tweet{ :'ng-bind-html' => 'tweet.text | linky' }
+						.date.text-center
+							{{tweet.updated}}
+				
+			.col-xs-12
+				%a.nounder.tw{ :'href' => 'https://twitter.com/ronacev', :'target' => '_blank' }
+					.follow
+						%i.fa.fa-twitter 
+						@ronacev
+				
 
 
 	

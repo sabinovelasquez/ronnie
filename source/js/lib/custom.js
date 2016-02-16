@@ -36,7 +36,7 @@ var app = angular
 		}
 		
 	])
-	.controller('twitterCtrl', [ '$scope', 'tweets',
+	.controller('essentialsCtrl', [ '$scope', 'tweets',
 		function($scope, tweets) {
 			$scope.getTweets = function() {
 				tweets.get({
@@ -44,7 +44,41 @@ var app = angular
 					
 				}).success(function(data) {
 					$scope.feed = data;
-					console.log(data);
+
+					var pagesShown = 1;
+					var pageSize = 3;
+
+					$scope.paginationLimit = function(data) {
+						return pageSize * pagesShown;
+					};
+					$scope.hasMoreItemsToShow = function() {
+						return pagesShown < ($scope.feed.tweets.length / pageSize);
+					};
+					$scope.hasLessItemsToShow = function() {
+						return pagesShown > 1;
+					};
+					$scope.showMoreItems = function() {
+						pagesShown = pagesShown + 1;       
+					};	
+					$scope.showLessItems = function() {
+						pagesShown = pagesShown - 1;       
+					};	
+				});
+			}
+			$scope.getTweets();
+
+			
+		}
+
+	])
+	.controller('twitterCtrl', [ '$scope', 'tweets',
+		function($scope, tweets) {
+			$scope.getTweets = function() {
+				tweets.get({
+					widgetId: '699360231952875521'
+					
+				}).success(function(data) {
+					$scope.feed = data;
 				});
 			}
 			$scope.getTweets();

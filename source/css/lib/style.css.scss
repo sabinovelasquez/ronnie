@@ -34,6 +34,10 @@ section, footer{
 	padding: 0!important;
 	position: fixed;
 	bottom:0;
+	small{
+		color: black;
+		text-transform: none;
+	}
 }
 
 header{
@@ -52,6 +56,7 @@ header{
 		
 	}
 	.sig{
+		
 		color:black;
 		position: absolute;
 		right: 20px;
@@ -59,9 +64,16 @@ header{
 		z-index: 99;
 		font-family: Arial;
 		font-size: 11px;
+		
 		a{
-			text-decoration: underline;
+			@include transition(opacity .3s ease);
+			opacity:1;
+			
 			color:black;
+			&:hover{
+				opacity:.6;
+				text-decoration:none;
+			}
 		}
 	}
 	h1{
@@ -72,6 +84,9 @@ header{
 		text-transform: uppercase;
 		font-family: 'pier_sansbold';
 		@include transition(opacity .3s ease);
+		@media(max-width:768px){
+			font-size: 2em;
+		}
 		&.min{
 			opacity: 0;
 		}
@@ -124,10 +139,11 @@ header{
 			height:2px;
 			width: 4%;
 			margin-left:48%;
+			margin-right:48%;
 			margin-bottom:40px;
 		}
 		&.left{
-			height:5px;
+			height:3px;
 			width: 8%;
 			margin-right:92%;
 		}
@@ -156,7 +172,8 @@ header{
 		cursor: pointer;
 		@include transition(opacity .3s ease);
 		color: black;
-		text-decoration: underline;
+		text-decoration: none;
+		font-size: 1.8em;
 		&:hover{
 			opacity: .5;
 		}
@@ -250,6 +267,9 @@ header{
 	.email{
 		font-size: 2em;
 		margin: 80px 0;
+		@media( max-width: 768px ){
+			font-size: 1.5em;
+		}
 	}
 }
 .instagram{
@@ -283,6 +303,7 @@ header{
 			margin-left:-90px;
 			width:180px;
 			background: $twitter;
+
 		}
 		&.insta{
 			margin-top: 10px;
@@ -303,7 +324,9 @@ header{
 	    width: 80px;
 	}
 }
+
 .tweets{
+	overflow:hidden;
 	margin: 50px 0;
 	background: white;
 	color: black;
@@ -345,9 +368,13 @@ header{
 			margin-bottom: 50px;
 			float: left;
 			left:50%;
-			margin-left:-90px;
-			width:180px;
+			margin-left:-50px;
+			width:100px;
+			color:white;
 			background: $twitter;
+			font-family: 'Arial';
+			font-weight: bold;
+			color: white;
 		}
 		&.insta{
 			margin-top: 10px;
@@ -377,6 +404,16 @@ header{
 		font-style: italic;
 	}
 	
+}
+.last-tweet{
+	background: black!important;
+	color:white;
+	.tweet{
+		margin:80px 0 0 0;
+	}
+	.date{
+		margin-bottom:70px;
+	}
 }
 .instagram{
 	h3{
