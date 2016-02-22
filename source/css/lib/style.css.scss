@@ -5,6 +5,9 @@
 
 body{
 	font-family: 'Cantata One', serif;
+	&.active{
+		background:red;
+	}
 }
 section, footer{
 	float: left;
@@ -173,11 +176,14 @@ header{
 		@include transition(opacity .3s ease);
 		color: black;
 		text-decoration: none;
-		font-size: 1.8em;
+		
 		&:hover{
 			opacity: .5;
 		}
+
 	}
+	a.less{font-size: 1.4em;}
+	a.more{font-size: 1.8em;}
 	.porta{
 		.narrow{
 			width:80%;
@@ -348,7 +354,6 @@ header{
 	}
 	a{
 		@include transition(opacity .3s ease);
-		color: black;
 		text-decoration: underline;
 		&:hover{
 			opacity: .5;
@@ -368,8 +373,8 @@ header{
 			margin-bottom: 50px;
 			float: left;
 			left:50%;
-			margin-left:-50px;
-			width:100px;
+			margin-left:-90px;
+			width:180px;
 			color:white;
 			background: $twitter;
 			font-family: 'Arial';
@@ -404,6 +409,31 @@ header{
 		font-style: italic;
 	}
 	
+}
+#tweets{
+	a{
+		color:white;
+	}
+}
+#ess{
+	a{
+		color:black;
+		&.more, &.less{
+			cursor: pointer;
+			text-decoration: none;
+			
+		}
+		&.more{
+			span{
+				font-size: 2.2em;
+			}
+		}
+		&.less{
+			span{
+				font-size: 1.8em;
+			}
+		}
+	}
 }
 .last-tweet{
 	background: black!important;

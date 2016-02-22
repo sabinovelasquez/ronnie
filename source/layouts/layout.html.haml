@@ -17,7 +17,8 @@
       = current_page.data.title || 'Title'
     = stylesheet_link_tag 'all'
 
-  %body
+  %body{ :'ng-controller' => 'gralCtrl', :'ng-class' => '{"active": modfull}' }
+    %h1 {{modfull}}
     = yield
     = javascript_include_tag 'all'
     %script{ :'type' => 'text/javascript', :'src' => '//s7.addthis.com/js/300/addthis_widget.js#pubid=palpito1', :'async' => 'async' }

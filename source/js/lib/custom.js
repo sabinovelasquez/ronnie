@@ -24,6 +24,7 @@ var app = angular
 	.controller('gralCtrl', [ '$scope', '$document', 
 		function($scope, $document) {
 			$scope.head = false;
+			$scope.modfull = false;
 			$scope.lang = 1;
 			$document.on('scroll', function() {
 				if( $document.scrollTop() > 330 ){
@@ -106,7 +107,10 @@ var app = angular
 		$scope.showLessItems = function() {
 			pagesShown = pagesShown - 1;       
 		};	
-		
+		$scope.fullscreen = function() {
+			$scope.modfull = true;
+			console.log($scope.modfull);
+		}
 	})
 	.controller('instagramCtrl', [ '$scope', '$http',
 		function($scope, $http) {
@@ -115,9 +119,6 @@ var app = angular
 				.success(function(response) {
 					$scope.photos = response.data;
 				});
-			$scope.fullscreen = function() {
-				// console.log('full');
-			}
 		}
 	]);
 

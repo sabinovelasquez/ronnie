@@ -10,7 +10,7 @@
 				%hr.center
 		%p.text-center{ :'ng-hide' => 'feed' }
 			Loading tweets...
-		#tweets.narrow
+		#ess.narrow
 			.item{ :'ng-repeat' => 'tweet in feed.tweets | limitTo: paginationLimit() ' }
 				.col-sm-4
 					%h3.text-center
@@ -19,9 +19,9 @@
 			.col-sm-12.text-center{ :'ng-show' => 'hasLessItemsToShow()' }
 				%a.less{ :'ng-click' => 'showLessItems()' }
 					%span{ :'ng-show' => 'lang==1' }
-						(ver menos)
+						ver menos
 					%span{ :'ng-show' => 'lang==2' }
-						(view less)
+						view less
 			.col-sm-12.text-center{ :'ng-show' => 'hasMoreItemsToShow()' }
 				%a.more{ :'ng-click' => 'showMoreItems()' }
 					%span{ :'ng-show' => 'lang==1' }
