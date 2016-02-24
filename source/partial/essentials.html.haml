@@ -12,20 +12,20 @@
 			Loading tweets...
 		#ess.narrow
 			.item{ :'ng-repeat' => 'tweet in feed.tweets | limitTo: paginationLimit() ' }
-				.col-sm-4
+				.col-lg-6.col-sm-12
 					%h3.text-center
 						.tweet{ :'ng-bind-html' => 'tweet.text | linky' }
 
-			.col-sm-12.text-center{ :'ng-show' => 'hasLessItemsToShow()' }
-				%a.less{ :'ng-click' => 'showLessItems()' }
-					%span{ :'ng-show' => 'lang==1' }
-						ver menos
-					%span{ :'ng-show' => 'lang==2' }
-						view less
+			
 			.col-sm-12.text-center{ :'ng-show' => 'hasMoreItemsToShow()' }
 				%a.more{ :'ng-click' => 'showMoreItems()' }
 					%span{ :'ng-show' => 'lang==1' }
 						(ver más)
 					%span{ :'ng-show' => 'lang==2' }
 						(view more)	
-	
+			.col-sm-12.text-center{ :'ng-show' => 'hasLessItemsToShow()' }
+				%a.less{ :'ng-click' => 'showLessItems()' }
+					%span{ :'ng-show' => 'lang==1' }
+						ver menos
+					%span{ :'ng-show' => 'lang==2' }
+						view less

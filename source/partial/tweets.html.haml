@@ -6,13 +6,13 @@
 					%h3.text-center
 						.tweet{ :'ng-bind-html' => 'tweet.text | linky' }
 						.date.text-center
-							{{tweet.updated}}
+							twiteado hace {{tweet.updated}}
 				
 			.col-xs-12
 				%a.nounder.tw{ :'href' => 'https://twitter.com/ronacev', :'target' => '_blank' }
 					.follow
 						%i.fa.fa-twitter 
-						follow me @ronacev
+						follow @ronacev
 				
 
 

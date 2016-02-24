@@ -53,12 +53,12 @@
 				%span{ :'ng-show' => 'lang==2 && item.desafio_en' }
 					Challenge:<br>{{item.desafio_en}}
 			%p.subt
-				%span{ :'ng-show' => 'lang==1 && item.contrabrief_es'}
-					Contrabrief:<br>
-					%span{:'ng-bind-html' => 'item.contrabrief_es | html' }
-				%span{ :'ng-show' => 'lang==2 && item.contrabrief_en' }
-					Counter Brief:<br>
-					%span{:'ng-bind-html' => 'item.contrabrief_es | html' }
+				%span{ :'ng-show' => 'lang==1 && item.solucion_es'}
+					Solución:<br>
+					%span{:'ng-bind-html' => 'item.solucion_es | html' }
+				%span{ :'ng-show' => 'lang==2 && item.solucion_en' }
+					Solution Brief:<br>
+					%span{:'ng-bind-html' => 'item.solucion_es | html' }
 			%p.subt
 				%span{ :'ng-show' => 'lang==1 && item.skills_es' }
 					Skills:<br>{{item.skills_es}}

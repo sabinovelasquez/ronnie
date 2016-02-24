@@ -24,7 +24,7 @@ var app = angular
 	.controller('gralCtrl', [ '$scope', '$document', 
 		function($scope, $document) {
 			$scope.head = false;
-			$scope.modfull = false;
+			$scope.modfull=false;
 			$scope.lang = 1;
 			$document.on('scroll', function() {
 				if( $document.scrollTop() > 330 ){
@@ -47,7 +47,7 @@ var app = angular
 					$scope.feed = data;
 
 					var pagesShown = 1;
-					var pageSize = 3;
+					var pageSize = 4;
 
 					$scope.paginationLimit = function(data) {
 						return pageSize * pagesShown;
@@ -85,33 +85,35 @@ var app = angular
 			$scope.getTweets();
 		}
 	])
-	.controller("portfolioCtrl", function($scope, $firebaseArray) {
-		var ref = new Firebase("https://ronnieacevedo.firebaseio.com/portfolio");
-		var pagesShown = 1;
-		var pageSize = 6;
-
-		$scope.items = $firebaseArray(ref);
-
-		$scope.paginationLimit = function(data) {
-			return pageSize * pagesShown;
-		};
-		$scope.hasMoreItemsToShow = function() {
-			return pagesShown < ($scope.items.length / pageSize);
-		};
-		$scope.hasLessItemsToShow = function() {
-			return pagesShown > 1;
-		};
-		$scope.showMoreItems = function() {
-			pagesShown = pagesShown + 1;       
-		};	
-		$scope.showLessItems = function() {
-			pagesShown = pagesShown - 1;       
-		};	
-		$scope.fullscreen = function() {
-			$scope.modfull = true;
-			console.log($scope.modfull);
+	.controller("portfolioCtrl", ['$scope', '$firebaseArray',
+		function($scope, $firebaseArray) {
+			var ref = new Firebase("https://ronnieacevedo.firebaseio.com/portfolio");
+			var pagesShown = 1;
+			var pageSize = 6;
+	
+			$scope.items = $firebaseArray(ref);
+	
+			$scope.paginationLimit = function(data) {
+				return pageSize * pagesShown;
+			};
+			$scope.hasMoreItemsToShow = function() {
+				return pagesShown < ($scope.items.length / pageSize);
+			};
+			$scope.hasLessItemsToShow = function() {
+				return pagesShown > 1;
+			};
+			$scope.showMoreItems = function() {
+				pagesShown = pagesShown + 1;       
+			};	
+			$scope.showLessItems = function() {
+				pagesShown = pagesShown - 1;       
+			};	
+			$scope.fullscreen = function() {
+				$scope.modfull = true;
+				console.log($scope.modfull);
+			}
 		}
-	})
+	])
 	.controller('instagramCtrl', [ '$scope', '$http',
 		function($scope, $http) {
 			var instagram_json = 'https://api.instagram.com/v1/users/41166289/media/recent/?client_id=8a5f05fceb2c42299239597c6ded2f8e&count=8&callback=JSON_CALLBACK'
